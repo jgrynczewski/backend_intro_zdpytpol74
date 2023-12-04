@@ -33,5 +33,10 @@ def hello_template(request, name):
 
 
 def hello_template2(request, name):
-    return render(request, 'name_template.html')
-
+    return render(
+        request,
+        'name_template.html',
+        context={
+            'name': name
+        }
+    )
