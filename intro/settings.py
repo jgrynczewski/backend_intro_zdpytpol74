@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     # local
     'hello.apps.HelloConfig',
+    'template_app.apps.TemplateAppConfig',
 ]
 
 MIDDLEWARE = [
