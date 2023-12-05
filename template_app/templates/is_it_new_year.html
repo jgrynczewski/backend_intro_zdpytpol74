@@ -1,10 +1,19 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'script/main.js' %}"></script>
 </head>
 <body>
-    <h1>{{ result }}<h1>
+    {% if is_new_year %}
+        <h1 style="color: blue;">TAK</h1>
+        <img src="{% static 'img/image.jpeg' %}"
+    {% else %}
+        <h1 style="color:red;">NIE</h1>
+    {% endif %}
 </body>
 </html>
