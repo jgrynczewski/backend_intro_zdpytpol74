@@ -17,3 +17,19 @@ def isitnewyear(request):
             'is_new_year': True
         }
     )
+
+
+def template_view(request):
+    fruits = [
+        'jabłko',
+        'banan',
+        'mandarynki'
+    ]
+
+    return render(
+        request,
+        'template.html',
+        {
+            'fruits': fruits
+        }
+    )
