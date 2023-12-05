@@ -10,8 +10,44 @@
     <ul>
     {% for fruit in fruits %}
         <li>{{ fruit }}</li>
+        {{ forloop }}
+        <p>{{ forloop.counter0 }}</p>
+        <br>
     {% endfor %}
     </ul>
+
+    {# Odwołanie po indeksie #}
+    <p>{{ fruits.1 }}</p>
+
+    <p>{{ user }}</p>
+
+    {# Odwołanie po kluczu #}
+    <p>{{ user.age }}</p>
+
+    {# Odwołanie po atrybucie #}
+    <p>{{ cow.name }}</p>
+
+    {% comment %}
+        {{ user['age'] }}
+    {% endcomment %}
+    <!-- Komentarz html
+    blok
+    -->
+
+    {# Filtry DTL #}
+    {{ fruits|length }}
+
+    <p>{{ fruits.1 }}</p>
+    <p>{{ fruits.1|upper }}</p>
+    <p>{{ fruits.1|capfirst }}</p>
+
+    {# Parametry filtrów DTL #}
+    <p>{{ fruits.1|cut:"a" }}</p>
+
+    <p>{{ fruits|join:", " }}</p>
+    <p>{{ user.age|add:2 }}</p>
+
+    {{ fruits|length|add:2 }}
 
 </body>
 </html>
