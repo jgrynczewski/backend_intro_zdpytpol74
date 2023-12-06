@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'link_app.apps.LinkAppConfig',
     'inheritance_app.apps.InheritanceAppConfig',
     'form_app1.apps.FormApp1Config',
+    'form_app2.apps.FormApp2Config',
 ]
 
 MIDDLEWARE = [
