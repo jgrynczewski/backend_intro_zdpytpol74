@@ -1,6 +1,8 @@
 # formularz - metoda POST (redirect)
 from django.shortcuts import render, redirect, Http404
 
+from form_app5.models import Task
+
 TASKS = []
 
 
@@ -15,7 +17,7 @@ def task_create_view(request):
     if request.method == "POST":
         task = request.POST.get('task')
         if task is not None:
-            TASKS.append(task)
+            Task.objects.create(name=task)
 
         return redirect('form_app5:task_list')
 
@@ -26,23 +28,18 @@ def task_list_view(request):
         request,
         'form_app5/task_list.html',
         {
-            'tasks': TASKS
+            'tasks': Task.objects.all()
         }
     )
 
 
 # R (szczegół) z CRUD
 def task_detail_view(request, task_id):
-    if task_id > len(TASKS):
-        raise Http404()
-
-    task = TASKS[task_id-1]
     return render(
         request,
         'form_app5/task_detail.html',
         {
-            'task_id': task_id,
-            'task': task
+            'task': Task.objects.get(id=task_id)
         }
     )
 
