@@ -70,3 +70,28 @@ def task_update_view(request, task_id):
             TASKS[task_id-1] = new_task
 
         return redirect('form_app4:task_list')
+
+
+# D z CRUD
+def task_delete_view(request, task_id):
+    if task_id > len(TASKS):
+        raise Http404()
+
+    if request.method == "GET":
+        task = TASKS[task_id - 1]
+
+        return render(
+            request,
+            'form_app4/task_delete.html',
+            {
+                'task_id': task_id,
+                'task': task
+            }
+        )
+
+    elif request.method == "POST":
+        data = request.POST
+        if 'yes' in data:
+            TASKS.pop(task_id - 1)
+
+        return redirect('form_app4:task_list')

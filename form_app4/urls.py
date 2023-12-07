@@ -14,4 +14,6 @@ urlpatterns = [
     path('tasks/<int:task_id>/', views.task_detail_view, name='task_detail'),
     # U z CRUD
     path('tasks/<int:task_id>/update/', views.task_update_view, name='task_update'),
+    # D z CRUD
+    path('tasks/<int:task_id>/delete/', views.task_delete_view, name='task_delete')
 ]
