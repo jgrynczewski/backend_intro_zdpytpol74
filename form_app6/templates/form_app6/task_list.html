@@ -5,10 +5,11 @@
     <title>Lista zadań</title>
 </head>
 <body>
+  <a href="{% url 'form_app6:create_task' %}"><button>Dodaj</button></a>
   <h2>Lista zadań:</h2>
   <ul>
     {% for task in tasks %}
-      <li>{{ task.name }}</li>
+      <li><a href="{% url 'form_app6:task_detail' task.id %}">{{ task.name }}</a></li>
     {% endfor %}
   </ul>
 </body>

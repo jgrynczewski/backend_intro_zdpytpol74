@@ -8,5 +8,9 @@
   <h2>Szczegóły zadania o numerze {{ task.id }}</h2>
 
   <p>Nazwa: {{ task.name }}</p>
+  <br/>
+  <a href="{% url 'form_app6:task_list' %}"><button>Lista</button></a>
+  <a href="{% url 'form_app6:task_update' task.id %}"><button>Zmodyfikuj</button></a>
+  <a href="{% url 'form_app6:task_delete' task.id %}"><button>Usuń</button></a>
 </body>
 </html>
