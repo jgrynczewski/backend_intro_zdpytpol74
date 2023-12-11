@@ -79,7 +79,7 @@ def task_delete_view(request, task_id):
 
         return render(
             request,
-            'form_app5/task_delete.html',
+            'form_app5/task_confirm_delete.html',
             {
                 'task_id': task_id,
                 'task': task
