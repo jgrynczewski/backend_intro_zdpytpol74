@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'form_app5.apps.FormApp5Config',
     'relation_app.apps.RelationAppConfig',
     'form_app6.apps.FormApp6Config',
-
+    'forms_app.apps.FormsAppConfig',
 ]
 
 MIDDLEWARE = [
