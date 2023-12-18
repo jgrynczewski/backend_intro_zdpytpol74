@@ -1,7 +1,9 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, get_object_or_404
 
 from django import views
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DetailView
+
+from views_app.models import Person
 
 
 # function-based view
@@ -51,3 +53,34 @@ class HelloGenericView2(TemplateView):
         return context
 
 # Widok detalu (R z CRUD)
+
+
+# function-based view
+def person_detail(request, person_id):
+    person = get_object_or_404(Person, id=person_id)
+
+    return render(
+        request,
+        'views_app/person_detail.html',
+        {
+            "person": person
+        }
+    )
+
+
+# class-based view
+class PersonView(views.View):
+    def get(self, request, person_id):
+        person = get_object_or_404(Person, id=person_id)
+
+        return render(
+            request,
+            'views_app/person_detail.html',
+            {
+                "person": person
+            }
+        )
+
+
+class PersonDetailView(DetailView):
+    model = Person

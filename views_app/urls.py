@@ -19,8 +19,10 @@ urlpatterns = [
         TemplateView.as_view(template_name='views_app/hello.html'),
         name='hello-template4'
     ),
-    path('template/hello5/', views.HelloGenericView2.as_view(), name='hello-template5')
+    path('template/hello5/', views.HelloGenericView2.as_view(), name='hello-template5'),
 
     # DetailView
-
+    path('person/<int:person_id>/', views.person_detail, name='person-detail'),
+    path('person2/<int:person_id>/', views.PersonView.as_view(), name='person-detail2'),
+    path('person3/<int:pk>/', views.PersonDetailView.as_view(), name='person-detail3'),
 ]
