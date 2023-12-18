@@ -5,6 +5,27 @@
     <title>Title</title>
 </head>
 <body>
-  OK
+    <form method="POST">{% csrf_token %}
+        <label for="name">Imię:</label>
+        <input type="text" name="name" id="name">
+        <label for="email">Email:</label>
+        <input type="email" name = "email" id="email">
+        <label for="category">Kategoria:</label>
+        <select name="category" id="category">
+            <option value="">-----------------</option>
+            <option value="question">Pytanie</option>
+            <option value="other">Inne</option>
+        </select>
+        <label for="subject">Tytuł:</label>
+        <input type="text" name="subject" id="subject">
+        <label for="body">Treść:</label>
+        <textarea name="body" id="body"></textarea>
+        <label for="date">Ulubiona data:</label>
+        <input type="date" name="date" id="date">
+        <label for="time">Ulubiona godzina:</label>
+        <input type="time" name="time" id="time">
+
+        <input type="submit" value="Prześlij">
+    </form>
 </body>
 </html>
