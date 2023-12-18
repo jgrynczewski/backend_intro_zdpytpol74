@@ -16,3 +16,5 @@ class Message(models.Model):
     time = models.TimeField()
     added = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
+
+
