@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'form_app6.apps.FormApp6Config',
     'forms_app.apps.FormsAppConfig',
     'views_app.apps.ViewsAppConfig',
+    'cookies_app.apps.CookiesAppConfig',
 ]
 
 MIDDLEWARE = [
