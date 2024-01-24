@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse
 
 
-# Create your views here.
+# ciasteczka
 def set_cookies(request):
     res = HttpResponse("OK")
 
@@ -31,3 +31,29 @@ def delete_cookies(request):
     res.delete_cookie("ciasteczko1")
 
     return res
+
+
+# sesja
+def set_session(request):
+    request.session['animal'] = 'krowa'
+    return HttpResponse("Dodano do sesji klucz animal z wartością krowa")
+
+
+def get_session(request):
+    # odczyt danych sesji
+    session = request.session
+
+    return render(
+        request,
+        'cookies_app/session.html',
+        {
+            'session': session
+        }
+    )
+
+
+def delete_session(request):
+    if 'animal' in request.session:
+        del request.session['animal']
+
+    return HttpResponse("Usunięto z sesji klucz animal")
