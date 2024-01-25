@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm
 
 
 def index(request):
@@ -66,3 +67,15 @@ def logout_view(request):
     logout(request)
 
     return redirect('auth_app:login')
+
+
+def registration_view(request):
+    form = UserCreationForm()
+
+    return render(
+        request,
+        'auth_app/registration.html',
+        context={
+            'form': form
+        }
+    )
