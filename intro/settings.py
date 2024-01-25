@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'forms_app.apps.FormsAppConfig',
     'views_app.apps.ViewsAppConfig',
     'cookies_app.apps.CookiesAppConfig',
+    'auth_app.apps.AuthAppConfig',
 ]
 
 MIDDLEWARE = [

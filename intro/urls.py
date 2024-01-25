@@ -34,4 +34,5 @@ urlpatterns = [
     path('forms/', include('forms_app.urls')),
     path('views/', include('views_app.urls')),
     path('state/', include('cookies_app.urls')),
+    path('auth/', include('auth_app.urls')),
 ]
