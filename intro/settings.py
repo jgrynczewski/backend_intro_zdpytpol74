@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'views_app.apps.ViewsAppConfig',
     'cookies_app.apps.CookiesAppConfig',
     'auth_app.apps.AuthAppConfig',
+    'test_app.apps.TestAppConfig',
 ]
 
 MIDDLEWARE = [
