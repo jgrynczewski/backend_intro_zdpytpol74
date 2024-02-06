@@ -8,4 +8,4 @@ class TestExample(TestCase):
         result = concatenate_two_string("Hello, ", "how are you?")
 
         self.assertEqual(result, "Hello, how are you?")
-        self.assertEqual(concatenate_two_string('', 'n'), '')
+        self.assertEqual(concatenate_two_string('', ''), '')
